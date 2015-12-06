@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SPSInteractive</title>
+    <link rel = "stylesheet" href = "//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../navStyle.css"/>
+    <link rel="stylesheet" href="visStyle.css"/>
+</head>
+<body>
+
+<main>
+
+    <div id="visTitle">
+        <p>School Boundaries</p>
+    </div>
+    <br/>
+
+    <div class="dropClick" id = "descriptionTitle">
+        <p>Overview  <span class="descrArrow descrArrowDown glyphicon glyphicon-chevron-down"></span>
+            <span class="descrArrow descrArrowRight glyphicon glyphicon-chevron-right"></span></p>        </div>
+
+    <div id="visDescription">
+        <p>In Seattle, elementary, middle, and high schools are automatically assigned to a student based on
+            where they live.  If their house falls within a particular school's boundary, they are assigned to that school.
+            This map visualizes the attendance zones for all the schools in Seattle.
+            <br>
+            <br>
+            There are also a number of "option schools," to which no student is automatically assigned, and which offer
+            specialized curriculums.  To learn more about these schools, visit the
+            <a href="https://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=15340">Seattle Public School's website</a>.
+            <br>
+            <br>
+            Note that some school boundaries overlap.  To see the full attendance zone for a particular school, simply
+            click on the dot corresponding to the school you are interested in.</p>
+    </div>
+    <br/>
+
+    <div id="vis">
+        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+        <div class='tableauPlaceholder' style='width: 1504px; height: 1269px;'>
+            <noscript><a href=''>
+                <img alt='AttendanceZonesDash ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;DesktopOfficial_0&#47;AttendanceZonesDash&#47;1_rss.png' style='border: none' />
+            </a>
+            </noscript>
+            <object class='tableauViz' width='1504' height='1269' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='site_root' value='' />
+                <param name='name' value='DesktopOfficial_0&#47;AttendanceZonesDash' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;DesktopOfficial_0&#47;AttendanceZonesDash&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='showVizHome' value='no' />
+                <param name='showTabs' value='y' />
+                <param name='bootstrapWhenNotified' value='true' />
+            </object>
+        </div>
+
+
+</main>
+
+</body>
+<script src = "http://code.jquery.com/jquery-2.1.1.js"> </script>
+<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+<script src="addFunctions.js"></script>
+<script src="LoadNavBar.js"></script>
+</html>

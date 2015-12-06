@@ -1,0 +1,118 @@
+header {
+    text-align: center;
+    background: #ffffff;
+    border-bottom: 1px solid #6D6D6D;
+    margin-bottom: 75px;
+}
+
+#title h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+}
+
+#title h1 a {
+    color: #575656
+}
+
+a {
+    text-decoration: none !important;
+    color: #000000
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+
+nav {
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    margin-top: 20px;
+    list-style: none;
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li {
+    padding: 10px 80px;
+    padding-bottom: 20px;
+    padding-left: 0;
+    color: #333333;
+    float: left;
+}
+
+nav ul li p {
+    margin-bottom: 0;
+}
+
+nav ul li a {
+    color: #333333
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+}
+
+nav ul li:hover {
+    color: #1570a6;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+
+nav ul ul {
+    margin-top: 0;
+    border-bottom: solid 1px #6D6D6D;
+    padding: 0;
+    background: #ffffff;
+    top: 100%;
+}
+
+nav ul ul li {
+    padding: 12px 10px;
+    border-left: 1px solid #6D6D6D;
+    border-right: 1px solid #6D6D6D;
+    text-align: left;
+    float: none;
+    position: relative;
+}
+
+nav ul ul ul {
+    display: none;
+    position: absolute;
+}
+
+nav ul ul li:hover > ul {
+    width: 70%;
+    display: inline;
+    border-top: solid 1px #000000;
+    margin-left: 94%;
+    margin-top: -30pt;
+}
+
+nav ul ul ul a {
+    display: block;
+}
+
+
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+

@@ -1,0 +1,38 @@
+#description {
+    margin: 0 25%;
+    margin-bottom: 75px;
+    color: #73706f;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 150%;
+    letter-spacing: 1px;
+}
+
+#explore {
+    text-align: center;
+    margin: 0 10%;
+}
+
+#explore #exploreTitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+#explore .explorePortal p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #474545;
+}
+
+#explore .explorePortal a {
+    margin-top: 30px;
+    height: 90pt;
+    padding-top: 37pt;
+    border: 1px solid #7d7a79;
+    display: block;
+}

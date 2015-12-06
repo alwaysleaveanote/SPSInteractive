@@ -1,0 +1,41 @@
+body {padding:10px}
+
+.draggable-element {
+    display: inline-block;
+    cursor:move;
+    position:absolute; /* important (all position that's not `static`) */
+}
+
+.mapVis {
+    width: 200px;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #6D6D6D;
+}
+
+.chartVis {
+    width: 900px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #6D6D6D;
+}
+
+.dragBar {
+    display: inline-block;
+    width: auto;
+    text-align: center;
+    font-family: helvetica;
+    font-size: 18px;
+    padding: 2px 0;
+    margin: 0;
+}
+
+.options {
+    display: inline-block;
+    width: auto;
+    font-size: 14px;
+    padding: 2px 0;
+    margin: 0;
+}

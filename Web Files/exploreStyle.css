@@ -1,0 +1,35 @@
+#description {
+    margin: 0 15%;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+#topics {
+    position: relative;
+    text-align: center;
+    margin-top: 75px;
+}
+
+#topics .colTitle {
+    margin-bottom: 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#topics ul {
+    padding-left: 8%;
+    text-align: center;
+}
+
+#topics ul li {
+    margin-bottom: 15px;
+}
+
+#topics ul li p{
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+

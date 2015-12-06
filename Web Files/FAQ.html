@@ -1,0 +1,52 @@
+<html><head lang="en">
+    <meta charset="UTF-8">
+    <title>SPSInteractive</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="navStyle.css">
+    <link rel="stylesheet" href="FAQStyle.css">
+
+<body>
+    <p id =  FAQTitle>FAQs</p>
+<ul id = FAQs>
+    <li id="customSet" class="Question">How can I create my own set of schools to compare?
+        <span class="customSetToggleArrow toggleArrowDown glyphicon glyphicon-chevron-down" style="display: none;"></span>
+        <span class="customSetToggleArrow toggleArrowRight glyphicon glyphicon-chevron-right" style="display: inline;"></span>
+        <p id="customSetAns" class="Answer" style="display: none;">You can select specific schools in two ways.  First, you can
+            ctrl + click each of the schools you are interested in, and the charts will filter accordingly.
+            Alternatively, you can hover over the map, hover over the bottom option on the map toolbar (the one that
+            looks like a play button), and select one of the three rightmost options.  This will allow you to
+            draw an area on the map, and select all the schools within that area.  The charts will then filter accordingly.
+            <br>Unfortunately, there is no way to save this selection once it is made, so you will have to reselect
+            the schools each time you visit a new page.</p>
+    </li>
+
+    <li id="resetMap" class="Question">I moved the map!  How do I reset it?
+        <span class="resetMapToggleArrow toggleArrowDown glyphicon glyphicon-chevron-down" style="display: none;"></span>
+        <span class="resetMapToggleArrow toggleArrowRight glyphicon glyphicon-chevron-right" style="display: inline;"></span>
+        <p id="resetMapAns" class="Answer" style="display: none;">To recenter and resize the map, so that it shows all the options,
+            simply hover over the map, and click on the "home" option on the toolbar.</p>
+    </li>
+
+    <li id="download" class="Question">Can I download the data you used?
+        <span class="downloadToggleArrow toggleArrowDown glyphicon glyphicon-chevron-down" style="display: none;"></span>
+        <span class="downloadToggleArrow toggleArrowRight glyphicon glyphicon-chevron-right" style="display: inline;"></span>
+        <p id="downloadAns" class="Answer" style="display: none;">All the data used comes from the <a href="http://data.k12.wa.us:9990/PublicDWP/Web/WashingtonWeb/Home.aspx">
+            OSPI's website</a>.  You may either download it from there, or go to the chart you wish to get the data from, click on the left axis and hover over it,
+            and choose the "view data" option. From there, you can download all the data used to create the chart.
+        </p>
+    </li>
+
+    <li id="saveMYO" class="Question">Can I save a chart I created?
+        <span class="saveMYOToggleArrow toggleArrowDown glyphicon glyphicon-chevron-down" style="display: none;"></span>
+        <span class="saveMYOToggleArrow toggleArrowRight glyphicon glyphicon-chevron-right" style="display: inline;"></span>
+        <p id="saveMYOAns" class="Answer"> Unfortunately, it is not currently possible to save any custom charts you
+            create.  Write down the combination of charts and maps you used, so you can recreate it!</p>
+    </li>
+</ul>
+
+
+<script src="http://code.jquery.com/jquery-2.1.1.js"> </script>
+<script src="LoadNavBar.js"></script>
+<script src="addToggle.js"></script>
+</body></html>

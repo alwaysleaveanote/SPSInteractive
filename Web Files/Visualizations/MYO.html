@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SPSInteractive</title>
+    <link rel = "stylesheet" href = "//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../navStyle.css"/>
+    <link rel="stylesheet" href="MYOStyle.css"/>
+</head>
+<body>
+
+
+<main>
+
+    <div id="visTitle">
+        <p>Make Your Own!</p>
+    </div>
+    <br/>
+
+    <div class="dropClick" id = "descriptionTitle">
+        <p>Overview  <span class="descrArrow descrArrowDown glyphicon glyphicon-chevron-down"></span>
+            <span class="descrArrow descrArrowRight glyphicon glyphicon-chevron-right"></span></p>        </div>
+
+    <div id="visDescription">
+        <p>This tools allows you to compare different types of data side by side.  Simply choose
+        how many charts (in the form of bar graphs) and maps you want to display, then choose
+        what information should be displayed on each.  For example, if you wanted to see how
+        rates of free and reduced priced lunch compare with average test scores, choose 0 charts and
+        2 maps, color one by free and reduced priced lunch and the other by overall tests scores.</p>
+        <p>Note that this visualization may be slow to load, but it will work.</p>
+    </div>
+    <br/>
+
+    <div id="vis">
+        <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+        <div class='tableauPlaceholder' style='width: 1104px; height: 1169px;'>
+            <noscript>
+                <a href='#'>
+                    <img alt='MYO ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;MakeYourOwn&#47;MYO&#47;1_rss.png' style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz' width='1104' height='1169' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='site_root' value='' />
+                <param name='name' value='MakeYourOwn&#47;MYO' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;MakeYourOwn&#47;MYO&#47;1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='showVizHome' value='no' />
+                <param name='showTabs' value='y' />
+                <param name='bootstrapWhenNotified' value='true' />
+            </object>
+        </div>
+    </div>
+    <p></p>
+
+</main>
+
+</body>
+<script src = "http://code.jquery.com/jquery-2.1.1.js"> </script>
+<script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script>
+<script src="addFunctions.js"></script>
+<script src="LoadNavBar.js"></script>
+</html>

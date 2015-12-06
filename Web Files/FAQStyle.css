@@ -1,0 +1,42 @@
+main {
+    width: 100%;
+}
+
+#FAQTitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    font-weight: 100;
+    margin-bottom: 20px;
+    margin-left: 10%;
+}
+
+#FAQs {
+    margin-left: 10%;
+    padding-left: 10px;
+}
+
+#FAQs li {
+    margin-top: 10px;
+    font-family: helvetica;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#FAQs li p {
+    width: 75%;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 10px 0px 30px 20px;
+}
+
+.Answer {
+  display: none;
+}
+
+.toggleArrowDown {
+     display: none;
+ }
+
+.toggleArrowRight {
+    display: inline;
+}
