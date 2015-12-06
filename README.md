@@ -38,4 +38,21 @@ Simply tracking down and getting my hands on all of these datasets was perhaps t
 #####Roadblocks I faced
 One of the biggest problems I had in getting the data was that the OSPI tool requires you to download separate datasets for each school year and each grade level, meaning I had to download and combine literally hundreds of datasets by hand.  This, combined with extremely slow filtering and downloading made this process excruciating.  Don't be stupid like me.  These agencies more than likely have all the years and grades for any particular dataset already combined and saved on their own servers.  Email them and ask for the files!    
 
-Another problem I had was that not all of the datasets I wanted were on the OSPI website.  In Seattle, schools publish a "report card" every year with information about average class sizes, attendance rates, etc. Unfortunately, each of these reports is hosted on a separate page and there is no easy way to get that data.  If this happens to you 
+Another problem I had was that not all of the datasets I wanted were on the OSPI website.  In Seattle, schools publish a "report card" every year with information about average class sizes, attendance rates, etc. Unfortunately, each of these reports is hosted on a separate page and there is no easy way to get that data.  If this happens to you **Email the school district**.  If that doesn't work, and you really need the data, you're just going to have to do it the hard way: by hand or by web scraper.  
+
+####Cleaning the Data
+Once you have all the datasets, odds are they're too dirty to do anything with.  There are too many weird little errors which could break your entire visualiztion for me to go over, but I'll include the process I went through to clean my data, as well as some of the tricky errors I encountered
+
+1. Combine all similar datasets.  The first thing you should do after you finish getting all your datasets is combine similar ones.  If, like me, you have a different dataset for each grade and school year, this can be a long, arduous process.  Sorry.  Watching Netflix while you copy and paste all the similar datasets into one master dataset makes it a little bit more bearable.  If you took my advice and emailed the agency directly, congratulations you saved yourself hours of drudgery. Or cost yourself hours of Netflix.  Depends on how you look at it.
+2. 
+
+
+
+
+
+
+
+
+
+
+
