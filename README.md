@@ -61,7 +61,7 @@ Once you have all the datasets, odds are they're too dirty to do anything with. 
 1. Schools can close from year to year.  If you want to create a tool which only shows schools that are currently in business, make sure that you obtain an up to date directory, and use only the schools in this directory when creating your joining datasets.  
 
 ####Special Datasets
-In Seattle, each school has a specific attendance zones.  If you don't live within this zone, you have to get special permission to attend the school.   
+In Seattle, each school has a specific attendance zones.  If you don't live within this zone, you have to get special permission to attend the school.   I wanted to visualize these zones, so I obtained shapefiles of all of the attendance zones.  Tableau is not compatible with these types of files, though, so I had to use [QGIS](http://www.qgis.org/en/site/) to transform these shapefiles into polygon files.  [This](https://community.tableau.com/docs/DOC-5831) is a great guide on how to do that, if you have a shapefile you'd like to visualize.
 
 
 
