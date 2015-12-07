@@ -61,8 +61,28 @@ Once you have all the datasets, odds are they're too dirty to do anything with. 
 1. Schools can close from year to year.  If you want to create a tool which only shows schools that are currently in business, make sure that you obtain an up to date directory, and use only the schools in this directory when creating your joining datasets.  
 
 ####Special Datasets
-In Seattle, each school has a specific attendance zones.  If you don't live within this zone, you have to get special permission to attend the school.   I wanted to visualize these zones, so I obtained shapefiles of all of the attendance zones.  Tableau is not compatible with these types of files, though, so I had to use [QGIS](http://www.qgis.org/en/site/) to transform these shapefiles into polygon files.  [This](https://community.tableau.com/docs/DOC-5831) is a great guide on how to do that, if you have a shapefile you'd like to visualize.
+Shapefiles:  In Seattle, each school has a specific attendance zones.  If you don't live within this zone, you have to get special permission to attend the school.   I wanted to visualize these zones, so I obtained shapefiles of all of the attendance zones.  Tableau is not compatible with these types of files, though, so I had to use [QGIS](http://www.qgis.org/en/site/) to transform these shapefiles into polygon files.  [This](https://community.tableau.com/docs/DOC-5831) is a great guide on how to do that.
 
+
+###The Visualization
+For the actual visualization portion of my project, I used [Tableau Public](https://public.tableau.com/s/).  There are plenty of [getting started guides](http://www.tableau.com/beginners-data-visualization_ out there for Tableau, so I'll only briefly go over the steps I went through to make my basic visualizations, then talk about some of the tricker hacks and work-arounds I did to make it user friendly. 
+
+1. [Load your master datasets](http://www.tableau.com/learn/tutorials/on-demand/connecting-excel-csv-and-text-files?signin=1939c4930fa0d531f77079da955c3fd1) and [create relationships](http://onlinehelp.tableau.com/current/pro/online/windows/en-us/multipleconnections_relationships.html) between all your datasets.
+  *NOTE: The only relationships which are strictly necessary are those from your master datasets to your joining dataset, but the more relationships the merrier.
+  *NOTE: If you correctly normalized the names of similar fields between your master datasets, these relationships should automatically be created.  It's always good to double check this, though.
+2. Make sure the data types and formats for each field are correct, the aggregation format is correct (you'll usually want to use "Average"), and determine which fields in each dataset should be measures, and which should be dimensions, and assign them.  [This](http://www.tableau.com/sites/default/files/pages/beginner_secrets2011.pdf) is a good walkthrough on each of those subject. 
+3. Now we can begin visualizing!  I'll leave it to you to explore the different types of visualizations you can create
+ *NOTE: Tableau uses primary datasets and secondary datasets.  The secondary datasets must have a "link" to (ie a field in common with) the primary dataset.  Sound familiar?  Your joining dataset should have fields in commmon with all of your other datasets (usually in the form of a school name or school ID)!  I recommend always usining your joining dataset as your primary dataset
+  *NOTE: If you have fairly simple data, each of your datasets should be able link to to each other dataset, so it's not strictly necessary to use your joining dataset as the primary, but I'd recommend doing it anyway for continuity and ease of editing.
+  *NOTE: Don't worry, this isn't the only point of the joining dataset
+
+####Hacks and Work-arounds
+You may have noticed that there's no obvious way to do a lot of different things such as filtering by schools a child in a particular grade can attend and adding titles.  Here's how I created all the functionalities I used in SPSInteractive.
+
+1. Sorting: Simply click on the leftmost axis title and a popup will appear containing a series of icons with different ways of displaying your data (ascending, descending, or list).  Choose the one you want and click on it.  Not a hack, but still useful.
+2. Changing the title.  You may have noticed that there is no obvious way to add a title to your chart (there is when you create a dashboard, but it's fairly ugly and introduces bugs we don't want).  You can work around this by creating a new calculated field with just the title you want for your chart.  Select the dataset you want this title in (don't worry, this won't change the original dataset.  I always use the joining dataset for storing titles) and select the down arrow next to "Dimensions".  Then select "Create new calculated field."  In the equation box type "[YOUR TITLE]" and press ok.  Now you have a field with just a title in it.  Drag the field as the leftmost entry in the "Columns" section, and your title should appear at the top of your chart.  
+3. Getting rid of unwanted field labels.  Sometimes you don't want to label your fields - for example, school names are pretty obviously school names, so you don't need to label them as "School Name" - and you can remove the label by right clicking on it and selecting "Hide Field Labels for Row/Col".  
+4. Filtering schools by grade included.  Remember that 
 
 
 
