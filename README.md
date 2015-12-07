@@ -1,5 +1,5 @@
 # SPSInteractive
-All the files I used to create SPSInteractive.azurewebsites.next plus general guidelines on how to recreate it with different data
+All the files I used to create [SPSInteractive](SPSInteractive.azurewebsites.net) plus a guide to recreating it with different data
 
 ##How To
 This section goes over how I created this tool and gives tips on how you can create your own
@@ -46,15 +46,14 @@ Once you have all the datasets, odds are they're too dirty to do anything with. 
 1. Combine all similar datasets.  The first thing you should do after you finish getting all your datasets is combine similar ones.  If, like me, you have a different dataset for each grade and school year, this can be a long, arduous process.  Sorry.  Watching Netflix while you copy and paste all the similar datasets into one master dataset makes it a little bit more bearable.  If you took my advice and emailed the agency directly, congratulations you saved yourself hours of drudgery. Or cost yourself hours of Netflix.  Depends on how you look at it.
 2. Now duplicate these master datasets and save one copy in a separate folder.  This isn't strictly necessary, but you'll be glad you did it if you mess up the cleaning process and need to revert to an earlier version.
 3. Finally, it's time to start cleaning.  First, go through each of the master datasets (note that these are not the master datasets you saved in a separate folder, but rather the duplicates) and take out any fields you aren't interested in.  Use your best judgement on which fields to delete (you can always restore them from the master copies later), but having 20 different fields for each dataset can the visualization tool you use (I used Tableau) crowded and hard to use.  
- *Don't delete unique identifiers such as School Codes.  These can be really useful if the actual names for these entities vary slightly across your datasets (which shouldn't happen, but it does).
-4. Get the latitude and longitude values for the schools addresses using a tool like [Batch Geocode](http://www.findlatitudeandlongitude.com/batch-geocode/#.VmTOOfmDGko) and add them to your directory dataset
-5. 
+  *Don't delete unique identifiers such as School Codes.  These can be really useful if the actual names for these entities vary slightly across your datasets (which shouldn't happen, but it does).
+4. Make field names easy to understand.  If a field has a name that you wouldn't immediately understand, or one that is unnecessarily long, change it to something better.  This'll make your life a lot easier later. 
+5. Normalize field names.  Make sure any fields that your various master datasets have in common (ie school names, school years, etc.) have the same name.  This will make it a lot easier to link the various files in your visualization tool.
+6. Get the latitude and longitude values for the school's addresses using a tool like [Batch Geocode](http://www.findlatitudeandlongitude.com/batch-geocode/#.VmTOOfmDGko) and add them to your directory dataset.
+7. 
 
 
-
-
-***Keep school IDs
-
+**schools go out of business. keep track
 
 
 
