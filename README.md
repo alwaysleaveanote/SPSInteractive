@@ -86,7 +86,7 @@ You may have noticed that there's no obvious way to do a lot of different things
 1. Sorting: Simply click on the leftmost axis title and a popup will appear containing a series of icons with different ways of displaying your data (ascending, descending, or list).  Choose the one you want and click on it.  Not a hack, but still useful.
 2. Changing the title.  You may have noticed that there is no obvious way to add a title to your chart (there is when you create a dashboard, but it's fairly ugly and introduces bugs we don't want).  You can work around this by creating a new calculated field with just the title you want for your chart.  Select the dataset you want this title in (don't worry, this won't change the original dataset.  I always use the joining dataset for storing titles) and select the down arrow next to "Dimensions".  Then select "Create new calculated field."  In the equation box type "[YOUR TITLE]" and press ok.  Now you have a field with just a title in it.  Drag the field as the leftmost entry in the "Columns" section, and your title should appear at the top of your chart.  
 3. Getting rid of unwanted field labels.  Sometimes you don't want to label your fields - for example, school names are pretty obviously school names, so you don't need to label them as "School Name" - and you can remove the label by right clicking on it and selecting "Hide Field Labels for Row/Col".  
-4. Filtering schools by grade included.  Remeber lowest and highest grade fields we added to your joining dataset?  This is where these come in useful.  Create a new parameter called "Grade Included" by clicking on the down arrow next to the "dimensions" tab (It doesn't matter which dataset you have selected), and selecting "Create Parameter".  Change the data type to "Integer" and the allowable values to "List".  In the list section, add an entry for each grade in the public school system (PK-12).  Ordinarly, the values and the "display as" option will coincide, but in the case of PK and K, set the values equal to -1 and 0 respectively.  Also add an entry (value = -2) to display all the schools.  Once you do this, select the joining dataset and create a new calculated field called "Can Child Attend".  This field will contain the value "Yes" if a child can attend a specific school and "No" otherwise.  In the text entry portion enter
+4. Filtering schools by whether or not a certain grade is covered by that school.  Remeber lowest and highest grade fields we added to your joining dataset?  This is where these come in useful.  Create a new parameter called "Grade Included" by clicking on the down arrow next to the "dimensions" tab (It doesn't matter which dataset you have selected), and selecting "Create Parameter".  Change the data type to "Integer" and the allowable values to "List".  In the list section, add an entry for each grade in the public school system (PK-12).  Ordinarly, the values and the "display as" option will coincide, but in the case of PK and K, set the values equal to -1 and 0 respectively.  Also add an entry (value = -2) to display all the schools.  Once you do this, select the joining dataset and create a new calculated field called "Can Child Attend".  This field will contain the value "Yes" if a child can attend a specific school and "No" otherwise.  In the text entry portion enter
 ```
 `
 IF [Grade Included] = -2 
@@ -113,8 +113,13 @@ SUM([Science].[AvgScienceLevel])+SUM([Writing].[AvgWritingLevel]))/
 COUNT([Science].[AvgScienceLevel])+COUNT([Writing].[AvgWritingLevel]))
 `
 ```
+7. Plotting two sets of points on a map.  For most of your visualizations, this won't matter, but if you are trying to plot multiple sets of points on the same map (for example, schools and social services), or on any other chart, [here's](https://public.tableau.com/s/blog/2014/04/going-dual-axis-maps) what you do.
 
+####Dashboards
+Dashboards are how you create fully interactive visualizations.  They are the format and layout of your end product and, more importantly, how you put your product online.  
 
+#####Basic Steps
+1. 
 
 
 
