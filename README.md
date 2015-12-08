@@ -116,11 +116,22 @@ COUNT([Science].[AvgScienceLevel])+COUNT([Writing].[AvgWritingLevel]))
 7. Plotting two sets of points on a map.  For most of your visualizations, this won't matter, but if you are trying to plot multiple sets of points on the same map (for example, schools and social services), or on any other chart, [here's](https://public.tableau.com/s/blog/2014/04/going-dual-axis-maps) what you do.
 
 ####Dashboards
-Dashboards are how you create fully interactive visualizations.  They are the format and layout of your end product and, more importantly, how you put your product online.  
+Dashboards are the tool Tableau uses to go from individual worksheets to fully functional, interactive visualizations.  They are the format and layout of your end product and, more importantly, what you put online.  
 
 #####Basic Steps
-1. 
+Creating a basic dashboard is fairly straightforward.  First, choose "Dashboard" from the toolbar and select create new dashboard.  From here, you can drag any worksheets you have saved from the left toolbar to the main page, and they will snap to fit the view.  Note that parameters you have visible on a worksheet will also show up in your dashboard.  You can remove these by clicking on them, and selecting the X in the top right of the box.  That's really all there is to a basic dashboard, but the devil is in the details.  
 
+#####Hacks and Work Arounds
+1. Changing the page size.  The default size for a tableau dashboard is thin and tall, which is not always the best fit for a web page or for the vision you have for your visualization.  To change the layout, go to the bottom section of the left toolbar, select the dropdown next to "Size", select "Exactly", and input the dimensions you want.  I used width=1100px, height = 700px, which seems to fit well on a web page.
+2. Creating the perfect layout.  Tableau uses a system of horizontal and vertical tiles to fit each element of a dashboard nicely into the page.  Horizontal tiles allow any worksheets placed in them to automatically change width and share the space in that tile evenly.  Vertical tiles do the same thing, except that they allow worksheets to change their height.  Normally, when you drag a worksheet onto the dashboard, it will make a guess as to how you meant to place it, and dynamically add horizontal and vertical tiles to accomidate you.  This method works fine if you are only placing a few worksheets on a page, but it gets trickier the more you need to add.  I recommend designing your dashboard on paper first, creating the layout in Tableau by hand, then placing worksheets directly into the desired tile.  I've included a more detailed guide on how to do this [here](https://github.com/alwaysleaveanote/SPSInteractive/blob/master/Creating%20Layouts.pptx)
+3. Making worksheets interact with one another.  You may have noticed that in my visualization, when you hover over the entry for a specific school in one chart, the corresponding entries in all the other charts are also highlighted.  Also, when you select a school or set of schools on the map, the charts automatically filter to show only results for the selected schools.  These are done with things called actions.  To create a new action, select Dashboard -> Action -> add action.  There are three types of actions: filter, highlight, and URL, but we'll only be using the filter and highlight actions.  Once you decide what type of action to create, there are four parameters you must set.
+  1. Run On: Determines what type of behavior triggers the action to occur.  ie, should it happen when you hover over a value?  Or only when you click on it 
+  2. Source Sheets: The Run On behavior only triggers an action if it is enacted on the worksheets included here.  These are only sheets that you've included in your dashboard.
+  3. Target Sheets: Once an action has been triggered, it will effect only the target sheets.  For example, if you've created a highlight action, only the values in the target sheets will be highlighted once the action is triggered.
+  4. Clearing the Selection: This determines what happens when you stop doing the behavior which initially triggered the action.  You will usually want this to be set to "Leave the Filter"
+  5. 
+Once you've done this, your action should be up and running.
+4. 
 
 
 
