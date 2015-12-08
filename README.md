@@ -65,8 +65,12 @@ Shapefiles:  In Seattle, each school has a specific attendance zones.  If you do
 
 
 ###The Visualization
-For the actual visualization portion of my project, I used [Tableau Public](https://public.tableau.com/s/).  There are plenty of [getting started guides](http://www.tableau.com/beginners-data-visualization_ out there for Tableau, so I'll only briefly go over the steps I went through to make my basic visualizations, then talk about some of the tricker hacks and work-arounds I did to make it user friendly. 
+For the actual visualization portion of my project, I used [Tableau Public](https://public.tableau.com/s/).  There are plenty of [getting started guides](http://www.tableau.com/beginners-data-visualization_ out there for Tableau, so I'll only briefly go over the steps I went through to make my worksheets and how I turned those into dashboards, and talk about some of the tricker hacks and work-arounds I did to make both the worksheets and dashboards user friendly.
 
+####Worksheets
+In tableau, there are two types of visualizations: Worksheets and Dashboards.  Worksheets are essentially the content of a visualization while dashboards are the formatting, and as such, you must create your worksheets before you create your dashboards.
+
+#####Basic Steps
 1. [Load your master datasets](http://www.tableau.com/learn/tutorials/on-demand/connecting-excel-csv-and-text-files?signin=1939c4930fa0d531f77079da955c3fd1) and [create relationships](http://onlinehelp.tableau.com/current/pro/online/windows/en-us/multipleconnections_relationships.html) between all your datasets.
   *NOTE: The only relationships which are strictly necessary are those from your master datasets to your joining dataset, but the more relationships the merrier.
   *NOTE: If you correctly normalized the names of similar fields between your master datasets, these relationships should automatically be created.  It's always good to double check this, though.
@@ -76,7 +80,7 @@ For the actual visualization portion of my project, I used [Tableau Public](http
   *NOTE: If you have fairly simple data, each of your datasets should be able link to to each other dataset, so it's not strictly necessary to use your joining dataset as the primary, but I'd recommend doing it anyway for continuity and ease of editing.
   *NOTE: Don't worry, this isn't the only point of the joining dataset
 
-####Hacks and Work-arounds
+#####Hacks and Work-arounds
 You may have noticed that there's no obvious way to do a lot of different things such as filtering by schools a child in a particular grade can attend and adding titles.  Here's how I created all the functionalities I used in SPSInteractive.
 
 1. Sorting: Simply click on the leftmost axis title and a popup will appear containing a series of icons with different ways of displaying your data (ascending, descending, or list).  Choose the one you want and click on it.  Not a hack, but still useful.
@@ -84,6 +88,7 @@ You may have noticed that there's no obvious way to do a lot of different things
 3. Getting rid of unwanted field labels.  Sometimes you don't want to label your fields - for example, school names are pretty obviously school names, so you don't need to label them as "School Name" - and you can remove the label by right clicking on it and selecting "Hide Field Labels for Row/Col".  
 4. Filtering schools by grade included.  Remeber lowest and highest grade fields we added to your joining dataset?  This is where these come in useful.  Create a new parameter called "Grade Included" by clicking on the down arrow next to the "dimensions" tab (It doesn't matter which dataset you have selected), and selecting "Create Parameter".  Change the data type to "Integer" and the allowable values to "List".  In the list section, add an entry for each grade in the public school system (PK-12).  Ordinarly, the values and the "display as" option will coincide, but in the case of PK and K, set the values equal to -1 and 0 respectively.  Also add an entry (value = -2) to display all the schools.  Once you do this, select the joining dataset and create a new calculated field called "Can Child Attend".  This field will contain the value "Yes" if a child can attend a specific school and "No" otherwise.  In the text entry portion enter
 ```
+`
 IF [Grade Included] = -2 
     THEN "Yes"
     
@@ -95,10 +100,19 @@ ELSEIF FLOAT(REPLACE(REPLACE([Highest Grade Level],'PK', '-1'),'K', '0')) >= [Gr
         END
 ELSE "No"
 END
+`
 ```
 After you have this field, you can place it in the filters section of any chart, select just the "Yes" option to display, and voilla. 
-5. Determining average test levels.  Standardized tests (at least in Washington) are graded on a 4-level scale.  if students do poorly, they fall into level one, slightly less poorly, level two, etc.  If your data was anythink like mine, the number/percent of students that fell into each of these categories was broken up.  ie there was a field for the number/percent of students from each school who fell into level 1, level 2, etc. To get the average test level, simply create a new calculated field in each of the standardized test master datasets which calculates `1*[percent of students who fell into level 1] + 2*[percent who fell into level 2] + ...`
-
+5. Determining average test levels.  Standardized tests (at least in Washington) are graded on a 4-level scale.  if students do poorly, they fall into level one, slightly less poorly, level two, etc.  If your data was anythink like mine, the number/percent of students that fell into each of these categories was broken up.  ie there was a field for the number/percent of students from each school who fell into level 1, level 2, etc. To get the average test level, simply create a new calculated field in each of the standardized test master datasets which calculates `1*[percent of students who fell into level 1] + 2*[percent who fell into level 2] + ...`.  
+6. Determine overall average test level.  Doing this is significantly trickier than you would expect because of technical details which I won't go into, but which basically mean that you can't simply average calculated columns in a new calculated column.  Instead,  create a new calculated field in your joining dataset with the code 
+```
+`
+(SUM([Math].[AvgMathLevel])+SUM([Reading].[AvgReadingLevel])+
+SUM([Science].[AvgScienceLevel])+SUM([Writing].[AvgWritingLevel]))/
+(COUNT([Math].[AvgMathLevel])+COUNT([Reading].[AvgReadingLevel])+
+COUNT([Science].[AvgScienceLevel])+COUNT([Writing].[AvgWritingLevel]))
+`
+```
 
 
 
