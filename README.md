@@ -55,7 +55,7 @@ Once you have all the datasets, odds are they're too dirty to do anything with. 
   *NOTE: I never use the School Type or Grade Range Name fields throughout my project.  You can leave them in if you think you will use them, but it is not necessary.  
   *NOTE: I also had a [JOIN ON](https://github.com/alwaysleaveanote/SPSInteractive/blob/master/Datafiles/JOIN%20ON.xlsx) dataset which I used throughout my project.  I only ever used the SchoolName field from it, though, which General also contains, so I could easily get rid of it and use only General.  Keep this in mind if you look at my Tableau files.   
   *NOTE: If this doesn't make sense to you yet, don't worry.  It'll make a lot more sense once we begin visualizing
-8. Create a Grades Included dataset containing a row for each grade (PK-12) in the public school system.  You can just copy [mine](https://github.com/alwaysleaveanote/SPSInteractive/blob/master/Datafiles/Grades%20Included.xlsx).  This will come in useful when we begin visualizing.  
+
 
 #####Things to Watch Out For
 1. Schools can close from year to year.  If you want to create a tool which only shows schools that are currently in business, make sure that you obtain an up to date directory, and use only the schools in this directory when creating your joining datasets.  
@@ -82,7 +82,33 @@ You may have noticed that there's no obvious way to do a lot of different things
 1. Sorting: Simply click on the leftmost axis title and a popup will appear containing a series of icons with different ways of displaying your data (ascending, descending, or list).  Choose the one you want and click on it.  Not a hack, but still useful.
 2. Changing the title.  You may have noticed that there is no obvious way to add a title to your chart (there is when you create a dashboard, but it's fairly ugly and introduces bugs we don't want).  You can work around this by creating a new calculated field with just the title you want for your chart.  Select the dataset you want this title in (don't worry, this won't change the original dataset.  I always use the joining dataset for storing titles) and select the down arrow next to "Dimensions".  Then select "Create new calculated field."  In the equation box type "[YOUR TITLE]" and press ok.  Now you have a field with just a title in it.  Drag the field as the leftmost entry in the "Columns" section, and your title should appear at the top of your chart.  
 3. Getting rid of unwanted field labels.  Sometimes you don't want to label your fields - for example, school names are pretty obviously school names, so you don't need to label them as "School Name" - and you can remove the label by right clicking on it and selecting "Hide Field Labels for Row/Col".  
-4. Filtering schools by grade included.  Remember that "Grades Included" data set we made?  And the lowest and highest grade fields we added to your joining dataset?  This is where these come in useful.  
+4. Filtering schools by grade included.  Remeber lowest and highest grade fields we added to your joining dataset?  This is where these come in useful.  Create a new parameter called "Grade Included" by clicking on the down arrow next to the "dimensions" tab (It doesn't matter which dataset you have selected), and selecting "Create Parameter".  Change the data type to "Integer" and the allowable values to "List".  In the list section, add an entry for each grade in the public school system (PK-12).  Ordinarly, the values and the "display as" option will coincide, but in the case of PK and K, set the values equal to -1 and 0 respectively.  Also add an entry (value = -2) to display all the schools.  Once you do this, select the joining dataset and create a new calculated field called "Can Child Attend".  This field will contain the value "Yes" if a child can attend a specific school and "No" otherwise.  In the text entry portion enter
+```
+IF [Grade Included] = -2 
+    THEN "Yes"
+    
+//Replace PK and K in your lowest/highest grade fields with the values you defined for them in your parameter
+ELSEIF FLOAT(REPLACE(REPLACE([Highest Grade Level],'PK', '-1'),'K', '0')) >= [Grade Included] 
+    THEN IF  FLOAT(REPLACE(REPLACE([Lowest Grade Level],'PK', '-1'),'K', '0')) <= [Grade Included]
+        THEN "Yes"
+        ELSE "No"
+        END
+ELSE "No"
+END
+```
+After you have this field, you can place it in the filters section of any chart, select just the "Yes" option to display, and voilla. 
+5. Determining average test levels.  Standardized tests (at least in Washington) are graded on a 4-level scale.  if students do poorly, they fall into level one, slightly less poorly, level two, etc.  If your data was anythink like mine, the number/percent of students that fell into each of these categories was broken up.  ie there was a field for the number/percent of students from each school who fell into level 1, level 2, etc. To get the average test level, simply create a new calculated field in each of the standardized test master datasets which calculates `1*[percent of students who fell into level 1] + 2*[percent who fell into level 2] + ...`
+
+
+
+
+
+
+
+
+
+
+
 
 
 
