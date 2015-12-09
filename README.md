@@ -138,7 +138,7 @@ Putting a Tableau visualization online is farily simple.  Go to your tableau pub
 The rest of this step is web development - you can make it as complicated or as uncomplicated as you want.  I've included my HTML files [here](https://github.com/alwaysleaveanote/SPSInteractive/tree/master/Web%20Files) for your convenience.
 
 
-
+###Congratulations!  You've just created a really useful tool.  Let's get as many of these out there as possible so education data becomes a little bit less hellish to deal with.
 
 
 
