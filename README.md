@@ -131,7 +131,9 @@ Creating a basic dashboard is fairly straightforward.  First, choose "Dashboard"
   4. Clearing the Selection: This determines what happens when you stop doing the behavior which initially triggered the action.  You will usually want this to be set to "Leave the Filter"
   5. 
 Once you've done this, your action should be up and running.
-4. 
+
+###Putting it Online
+This step of the process is mostly web dev 
 
 
 
