@@ -1,5 +1,5 @@
 # SPSInteractive
-All the files I used to create [SPSInteractive](SPSInteractive.azurewebsites.net) plus a guide to recreating it with different data
+This repo contains all the files I used to create [SPSInteractive](SPSInteractive.azurewebsites.net) plus a guide to recreating it with your own data
 
 ##How To
 This section goes over how I created this tool and gives tips on how you can create your own
@@ -7,7 +7,7 @@ This section goes over how I created this tool and gives tips on how you can cre
 ###The Data
 ####Getting the Data
 #####Basics
-Every state in the country has its' own government agency which is in charge of providing information, resources, and technical assistance for education related matters.  This means that there is no one-size-fits-all approach to gathering datasets from each different state, or even a way to gather the same datasets from each state. 
+Unfortunately, every state in the country has its' own government agency in charge of providing information, resources, and technical assistance for education related matters.  This means that there is no one-size-fits-all approach to gathering datasets from each different state, or even a way to gather the same datasets from each state. 
 
 In Washington, our education agency, [OSPI](http://data.k12.wa.us:9990/PublicDWP/Web/WashingtonWeb/Home.aspx?appid=448), makes all their datasets accessible through a (so slow as to be virtually unusable) collection of datasets, which you can filter to the year/school district/school level, then download CSVs for.  Roadblocks aside, they do have a huge number of (more-or-less... kinda...) clean datasets on a lot of really useful topics such as Demographics, Free or Reduced Priced Lunch, Test Scores, and English as a Second Language students.  
 
