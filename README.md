@@ -133,7 +133,7 @@ Creating a basic dashboard is fairly straightforward.  First, choose "Dashboard"
 Once you've done this, your action should be up and running.
 
 ###Putting it Online
-Putting a Tableau visualization online is farily simple.  Go to your tableau public page, edit the url so that it reads `https://public.tableau.com/profile/ **[YOUR PROFILE]** /vizhome/ **[NAME OF WORKBOOK]** / **[NAME OF THE DASHBOARD YOU WANT TO DISPLAY]** .  This will bring up the dashboard on the screen.  Note that you must remove all the spaces form the name of the dashboard.  From this page, select share, and copy the "Embed Code" into the HTML file for your website.  
+Putting a Tableau visualization online is farily simple.  Go to your tableau public page, edit the url so that it reads `public.tableau.com/profile/ **[YOUR PROFILE]** /vizhome/ **[NAME OF WORKBOOK]** / **[NAME OF THE DASHBOARD YOU WANT TO DISPLAY]** .  This will bring up the dashboard on the screen.  Note that you must remove all the spaces form the name of the dashboard.  From this page, select share, and copy the "Embed Code" into the HTML file for your website.  
 
 The rest of this step is web development - you can make it as complicated or as uncomplicated as you want.  I've included my HTML files [here](https://github.com/alwaysleaveanote/SPSInteractive/tree/master/Web%20Files) for your convenience.
 
