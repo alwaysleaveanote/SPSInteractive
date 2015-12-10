@@ -39,6 +39,7 @@ var navBarText = "<header>\n\
 \t\t\t</li>\n\
 \t\t\t<li><a href='Visualizations/MYO.html'><p>Make your Own</p></a></li>\n\
 \t\t\t<li><a href='FAQ.html'><p>FAQs</p></a></li>\n\
+\t\t\t<li><a href='ContactMe.html'><p>Contact Me</p></a></li>\n\
 \t\t</ul>\n\
 \t</nav>\n\
 </header>"

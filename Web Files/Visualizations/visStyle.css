@@ -51,3 +51,7 @@ main {
 .descrArrowRight {
     display: none;
 }
+
+#noVis p {
+    font-weight: 700;
+}
